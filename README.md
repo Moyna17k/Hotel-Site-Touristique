@@ -6,15 +6,15 @@ Je l'ai continué pour faire toute la partie BACK en reprenant toute la partie F
 
 ===========================================================================
 
-# J'ai créé tous mes Controllers.
-# J'ai importé tout mon FRONT dans les differents Controllers.
-# J'y ai également importé tout le CSS/bootstrap.
-# J'ai fais des partials pour mon Header et mon Footer
-# J'ai créé mes differentes Entity
+J'ai créé tous mes Controllers.
+J'ai importé tout mon FRONT dans les differents Controllers.
+J'y ai également importé tout le CSS/bootstrap.
+J'ai fais des partials pour mon Header et mon Footer
+J'ai créé mes differentes Entity
 
 ===========================================================================
 
-# J'ai créé mon CRUD en utilisant PHPMyAdmin
-# J'ai fais des Fixtures
-# J'ai créé la partie admin avec EasyAdmin
-# J'ai créé mon Dashboard ainsi que les differents CrudController
+J'ai créé mon CRUD en utilisant PHPMyAdmin
+J'ai fais des Fixtures
+J'ai créé la partie admin avec EasyAdmin
+J'ai créé mon Dashboard ainsi que les differents CrudController
