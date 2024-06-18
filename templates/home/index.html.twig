@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello
+	{{ controller_name }}
+{% endblock %}
+
+{% block body %}
+
+{% include 'partials/header.html.twig' %}
+
+	<!-- MAIN IMG -->
+
+	<div class="mainimg d-flex justify-content-center align-items-center">
+		<img src="assets/img/imgreception.jpg" alt="imgaccueil">
+		<p>Bienvenue à l'hôtel
+			<br>IBIS Budget Remiremont</p>
+	</div>
+
+	<!-- BUTTON -->
+
+	<div class="text-center my-5">
+		<button class="btnindex" onclick="window.open('https://all.accor.com/hotel/3487/index.fr.shtml', '_blank')">Réserver</button>
+	</div>
+
+{% include 'partials/footer.html.twig' %}
+
+{% endblock %}

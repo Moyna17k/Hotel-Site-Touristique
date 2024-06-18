@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	<nav class="navbar navbar-expand-lg">
+
+		<div class="container-fluid justify-content-center">
+
+			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href={{ path('app_home') }}>Accueil</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href={{ path('app_prestation') }}>Nos prestations</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href={{ path('app_restaurer') }}>Se restaurer</a>
+				</li>
+			</ul>
+
+			<img class="AccorLogo mx-5" src="assets/img/700px-Accor_Logo.png" alt="AccorLogo">
+
+			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href={{ path('app_activite') }}>Les activités</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href={{ path('app_commerce') }}>Les commerces</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href={{ path('app_contact') }}>Contact</a>
+				</li>
+			</ul>
+
+		</div>
+	</nav>
+
+{% endblock %}

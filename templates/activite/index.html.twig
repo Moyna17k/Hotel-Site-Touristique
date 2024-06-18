@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ActiviteController!{% endblock %}
+
+{% block body %}
+
+{% include 'partials/header.html.twig' %}
+
+<!------------ MAIN IMG ------------>
+
+<div class="mainimg">
+    <img src="assets/img/imgremiremont.jpg" alt="imgaccueil">
+    <p>Les activités</p>
+</div>
+
+<!------------ ACTIVITES ------------>
+
+<div class="container my-4">
+    <!-- Activité 1 -->
+    <div class="row align-items-center mb-4">
+        <div class="col-lg-7">
+            <img class="imgacti img-fluid" src="assets/img/imgplaneau.webp" alt="imgplaneau">
+        </div>
+        <div class="col-lg-5">
+            <div class="text-center">
+                <h2>LE PLAN D'EAU</h2>
+                <p>Le Plan d’eau de Remiremont est un petit lac artificiel sur la commune française située dans le département des Vosges et la région Grand Est. Au lieudit Lit d'eau, il est situé au confluent de la Moselle et de la Moselotte, dans un bassin hydraulique couvrant tout l’espace du Pays de Remiremont.</p>
+                <a class="btn btn-primary" href="https://www.remiremont.fr/sport/plan-deau/" target="_blank">Voir le lieu</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activité 2 -->
+    <div class="row align-items-center mb-4 flex-row-reverse">
+        <div class="col-lg-7">
+            <img class="imgacti img-fluid" src="assets/img/imgtendon.jpg" alt="imgtendon">
+        </div>
+        <div class="col-lg-5">
+            <div class="text-center">
+                <h2>CASCADE DE TENDON</h2>
+                <p>La Grande Cascade de Tendon est une chute d'eau du massif des Vosges située entre les communes de Tendon et du Tholy. Elle est située sur la limite des communes de Tendon et du Tholy. La cascade se trouve sur le ruisseau le Scouet, un affluent de la Moselle par le Barba et la Vologne</p>
+                <a class="btn btn-primary" href="https://www.google.com/search?q=Cascade+de+Tendon" target="_blank">Voir le lieu</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activité 3 -->
+    <div class="row align-items-center mb-4">
+        <div class="col-lg-7">
+            <img class="imgacti img-fluid" src="assets/img/imgbouchot.jpg" alt="imgbouchot">
+        </div>
+        <div class="col-lg-5">
+            <div class="text-center">
+                <h2>SAUT DU BOUCHOT</h2>
+                <p>Le Saut du Bouchot est une chute d'eau du massif des Vosges située entre les communes de Sapois et de Gerbamont. La cascade se trouve sur la rivière le Bouchot, un affluent de la Moselle par la Moselotte. Elle plonge à Sapois en une cascade de 28 mètres dans un cirque de toute beauté. Ce dernier vient ensuite gonfler les eaux de la Moselotte à Vagney.</p>
+                <a class="btn btn-primary" href="https://visitgrandest.com/saut-du-bouchot" target="_blank">Voir le lieu</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Activité 4 -->
+    <div class="row align-items-center mb-4 flex-row-reverse">
+        <div class="col-lg-7">
+            <img class="imgacti img-fluid" src="assets/img/imgjardin.webp" alt="imgjardin">
+        </div>
+        <div class="col-lg-5">
+            <div class="text-center">
+                <h2>JARDIN DE BERCHIGRANGE</h2>
+                <p>Le Jardin de Berchigranges est un jardin français situé à Granges-sur-Vologne dans le département des Vosges, à 650 m d'altitude. Né d'une initiative privée, il est ouvert au public.</p>
+                <a class="btn btn-primary" href="https://www.berchigranges.com/fr/" target="_blank">Voir le lieu</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% include 'partials/footer.html.twig' %}
+
+{% endblock %}

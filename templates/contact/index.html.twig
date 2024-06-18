@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+
+{% include 'partials/header.html.twig' %}
+
+<!-- MAIN IMG -->
+
+<div class="mainimg">
+    <img src="assets/img/imgcontact.jpg" alt="imgaccueil">
+    <p>CONTACT</p>
+</div>
+
+<!-- CONTACT -->
+
+<div class="container-fluid allcontainer" style="background-color: var(--secondary-color); color: var(--secondary-color);">
+    <div class="row justify-content-around">
+        <div class="col-lg-4 col-md-4" style="background-color: var(--primary-color); padding: 20px; border-radius: 10px;">
+            <h2>Coordonnées</h2>
+            <h3><i class="bi bi-geo-fill"></i> Adresse:</h3>
+            <a href="https://www.google.com/maps/dir//ibis+budget+remiremont+adresse/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x4793b02d44eddeef:0xee65dbb473652ac2?sa=X&ved=2ahUKEwjTgNqEq-yEAxWdUaQEHe2xCDkQ9Rd6BAhhEAA" target="_blank"><i class="bi bi-caret-right-fill"></i> 35 Fbg d'Alsace, 88200 Remiremont</a>
+            <h3><i class="bi bi-phone-fill"></i> Téléphone:</h3>
+            <p><i class="bi bi-caret-right-fill"></i> 08 92 68 30 07</p>
+            <h3><i class="bi bi-envelope-fill"></i> Email:</h3>
+            <p><i class="bi bi-caret-right-fill"></i> h3487@accor.com</p>
+        </div>
+
+        <div class="col-lg-4 col-md-4">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2669.127178733778!2d6.599662176717835!3d48.01125275994678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4793b02d44eddeef%3A0xee65dbb473652ac2!2sIbis%20Budget!5e0!3m2!1sfr!2sfr!4v1710165212014!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div class="col-lg-4 col-md-4" style="background-color: var(--primary-color); padding: 20px; border-radius: 10px;">
+            <h2>Horaires</h2>
+            <p>Lundi : 06h30 - 12h00 /  17h00 - 21h00</p>
+            <p>Mardi : 06h30 - 12h00 /  17h00 - 21h00</p>
+            <p>Mercredi : 06h30 - 12h00 /  17h00 - 21h00</p>
+            <p>Jeudi : 06h30 - 12h00 /  17h00 - 21h00</p>
+            <p>Vendredi : 06h30 - 12h00 /  17h00 - 21h00</p>
+            <p>Samedi : 07h30 - 12h00 /  17h00 - 21h00</p>
+            <p>Dimanche : 07h30 - 12h00 /  17h00 - 21h00</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
