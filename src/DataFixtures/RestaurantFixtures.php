@@ -10,7 +10,6 @@ class RestaurantFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-
         for ($i = 2; $i <= 10; $i++) {
             $restaurant = new Restaurant();
             $restaurant->setTitle("Restaurant $i");
