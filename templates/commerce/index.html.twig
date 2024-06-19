@@ -16,60 +16,19 @@
 <!-- COMMERCES -->
 
 <div class="container my-4">
-    <!-- Commerce 1 -->
     <div class="row align-items-center mb-4">
+    {% for commerce in commerces %}
         <div class="col-lg-7">
-            <img class="imgacti img-fluid" src="assets/img/imgplaneau.webp" alt="imgplaneau">
+            <img class="imgacti img-fluid" src="{{ asset('assets/img/' ~ commerce.image) }}" alt="imgplaneau">
         </div>
         <div class="col-lg-5">
             <div class="text-center">
-                <h2>LE MAGASIN DE NOS FERMES</h2>
-                <p>Le Magasin est issu d'un groupe de producteurs locaux et des consom'acteurs, LE MAGASIN est une expérience novatrice de l'économie sociale et solidaire au service de notre territoire. Le principe est simple : un magasin de producteurs co-animé et géré par une entreprise d'insertion et des producteurs participant.</p>
+                <h2>{{ commerce.title }}</h2>
+                <p>{{ commerce.description }}</p>
                 <a class="btn btn-primary" href="https://www.remiremont.fr/sport/plan-deau/" target="_blank">Voir le lieu</a>
             </div>
         </div>
-    </div>
-
-    <!-- Commerce 2 -->
-    <div class="row align-items-center mb-4 flex-row-reverse">
-        <div class="col-lg-7">
-            <img class="imgacti img-fluid" src="assets/img/imgtendon.jpg" alt="imgtendon">
-        </div>
-        <div class="col-lg-5">
-            <div class="text-center">
-                <h2>La Madelon</h2>
-                <p>La Brasserie La Madelon à Remiremont offre une expérience authentique de la tradition brassicole française. Avec ses recettes artisanales et son ambiance conviviale, elle séduit les amateurs de bière en quête de qualité et de découvertes.</p>
-                <a class="btn btn-primary" href="https://www.remiremont.fr/sport/plan-deau/" target="_blank">Voir le lieu</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Commerce 3 -->
-    <div class="row align-items-center mb-4">
-        <div class="col-lg-7">
-            <img class="imgacti img-fluid" src="assets/img/imgplaneau.webp" alt="imgplaneau">
-        </div>
-        <div class="col-lg-5">
-            <div class="text-center">
-                <h2>LE MAGASIN DE NOS FERMES</h2>
-                <p>Le Magasin est issu d'un groupe de producteurs locaux et des consom'acteurs, LE MAGASIN est une expérience novatrice de l'économie sociale et solidaire au service de notre territoire. Le principe est simple : un magasin de producteurs co-animé et géré par une entreprise d'insertion et des producteurs participant.</p>
-                <a class="btn btn-primary" href="https://www.remiremont.fr/sport/plan-deau/" target="_blank">Voir le lieu</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Commerce 4 -->
-    <div class="row align-items-center mb-4 flex-row-reverse">
-        <div class="col-lg-7">
-            <img class="imgacti img-fluid" src="assets/img/imgtendon.jpg" alt="imgtendon">
-        </div>
-        <div class="col-lg-5">
-            <div class="text-center">
-                <h2>La Madelon</h2>
-                <p>La Brasserie La Madelon à Remiremont offre une expérience authentique de la tradition brassicole française. Avec ses recettes artisanales et son ambiance conviviale, elle séduit les amateurs de bière en quête de qualité et de découvertes.</p>
-                <a class="btn btn-primary" href="https://www.remiremont.fr/sport/plan-deau/" target="_blank">Voir le lieu</a>
-            </div>
-        </div>
+    {% endfor %}
     </div>
 </div>
 

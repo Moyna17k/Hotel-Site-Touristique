@@ -20,10 +20,10 @@
         {% for restaurant in restaurants %}
         <div class="col">
             <div class="card h-100 text-center">
-                <img src="{{ asset('assets/img/' ~ restaurant.image) }}" class="card-img-top" alt="{{ restaurant.title }}">
+                <img src="{{ asset('images/restaurants/' ~ restaurant.image) }}" class="card-img-top" alt="{{ restaurant.title }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ restaurant.title }}</h5>
-                    <a href="#" class="btn btn-primary" target="_blank">Voir</a>
+                    <a href="{{ restaurant.url }}" class="btn btn-primary" target="_blank">Voir</a>
                 </div>
             </div>
         </div>
