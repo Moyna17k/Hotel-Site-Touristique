@@ -2,11 +2,11 @@
 
 namespace App\Entity;
 
-use App\Repository\RestaurantRepository;
+use App\Repository\CommerceRepository;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: RestaurantRepository::class)]
-class Restaurant
+#[ORM\Entity(repositoryClass: CommerceRepository::class)]
+class Commerce
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]

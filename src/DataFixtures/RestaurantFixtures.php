@@ -13,15 +13,15 @@ class RestaurantFixtures extends Fixture
         for ($i = 2; $i <= 10; $i++) {
             $restaurant = new Restaurant();
             $restaurant->setTitle("Restaurant $i");
-            $restaurant->setSlug("restaurant-$i");
-            $restaurant->setImage("restaurant-$i.jpg");
+            $restaurant->setSlug("Restaurant-$i");
+            $restaurant->setImage("Restaurant-$i.jpg");
             $restaurant->setCreatedAt(new \DateTimeImmutable());
             $restaurant->setUpdatedAt(new \DateTimeImmutable());
             $restaurant->setActive(true);
 
             $manager->persist($restaurant);
-        } 
-        
-        $manager->flush();
+    } 
+    
+    $manager->flush();
     }
 }
