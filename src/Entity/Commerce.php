@@ -2,12 +2,23 @@
 
 namespace App\Entity;
 
-use App\Repository\CommerceRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\CommerceRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: CommerceRepository::class)]
+#[Vich\Uploadable]
 class Commerce
 {
+
+    public function __construct()
+    {
+        $this->created_at = new \DateTimeImmutable();
+        $this->updated_at = new \DateTimeImmutable();
+        $this->is_active = true;
+    }
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -22,10 +33,13 @@ class Commerce
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
-    #[ORM\Column]
+    #[Vich\UploadableField(mapping: 'commerces', fileNameProperty: 'image')]
+    private ?File $imageFile = null;
+
+    #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeImmutable $created_at = null;
 
-    #[ORM\Column]
+    #[ORM\Column(type: 'datetime_immutable')]
     private ?\DateTimeImmutable $updated_at = null;
 
     #[ORM\Column]
@@ -33,6 +47,9 @@ class Commerce
 
     #[ORM\Column(length: 255)]
     private ?string $description = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $url = null;
 
     public function getId(): ?int
     {
@@ -68,11 +85,24 @@ class Commerce
         return $this->image;
     }
 
-    public function setImage(string $image): static
+    public function setImage(?string $image): static
     {
         $this->image = $image;
 
         return $this;
+    }
+
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+        if ($imageFile) {
+            $this->updated_at = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 
     public function getCreatedAt(): ?\DateTimeImmutable
@@ -119,6 +149,18 @@ class Commerce
     public function setDescription(string $description): static
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getUrl(): ?string
+    {
+        return $this->url;
+    }
+
+    public function setUrl(string $url): static
+    {
+        $this->url = $url;
 
         return $this;
     }

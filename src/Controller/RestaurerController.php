@@ -12,10 +12,8 @@ class RestaurerController extends AbstractController
     #[Route('/restaurer', name: 'app_restaurer')]
     public function index(RestaurantRepository $restaurantRepository): Response
     {
-        $restaurants = $restaurantRepository->findAll();
-
         return $this->render('restaurer/index.html.twig', [
-            'restaurants' => $restaurants,
+            'restaurants' => $restaurantRepository->findBy(['is_active' => true])
         ]);
     }
 }

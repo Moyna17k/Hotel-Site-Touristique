@@ -6,3 +6,12 @@ vich_uploader:
             uri_prefix: /images/restaurants
             upload_destination: '%kernel.project_dir%/public/images/restaurants'
             namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        activites:
+            uri_prefix: /images/activites
+            upload_destination: '%kernel.project_dir%/public/images/activites'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+        commerces:
+            uri_prefix: /images/commerces
+            upload_destination: '%kernel.project_dir%/public/images/commerces'
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+

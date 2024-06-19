@@ -11,7 +11,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 #[Vich\Uploadable]
 class Restaurant
 {
-    
+
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
@@ -149,5 +149,4 @@ class Restaurant
 
         return $this;
     }
-
 }
