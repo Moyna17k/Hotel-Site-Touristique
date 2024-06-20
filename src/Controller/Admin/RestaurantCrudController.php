@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Restaurant;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
 use Vich\UploaderBundle\Form\Type\VichImageType;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\UrlField;
@@ -15,6 +16,17 @@ class RestaurantCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Restaurant::class;
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        $actions = $actions->remove('index', 'delete');
+        
+        if ($this->isGranted('ROLE_SUPER_ADMIN')) {
+            $actions = $actions->add('index', 'delete');
+        }
+        
+        return $actions;
     }
 
     public function configureFields(string $pageName): iterable
@@ -35,4 +47,5 @@ class RestaurantCrudController extends AbstractCrudController
                 ->setRequired(false)->hideOnIndex(),
         ];
     }
+    
 }

@@ -30,11 +30,21 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Dashboard', 'fa fa-home');
-        yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
-        yield MenuItem::linkToCrud('Restaurants', 'fas fa-list', Restaurant::class);
-        yield MenuItem::linkToCrud('Activités', 'fas fa-list', Activite::class);
-        yield MenuItem::linkToCrud('Commerce', 'fas fa-list', Commerce::class);
-        
+        if ($this->isGranted('ROLE_SUPER_ADMIN')) {
+            yield MenuItem::section('Gestion des utilisateurs');
+            yield MenuItem::linkToCrud('Utilisateurs', 'fas fa-user', User::class);
+
+            yield MenuItem::section('Gestion des données');
+            yield MenuItem::linkToCrud('Restaurants', 'fas fa-list', Restaurant::class);
+            yield MenuItem::linkToCrud('Activités', 'fas fa-list', Activite::class);
+            yield MenuItem::linkToCrud('Commerce', 'fas fa-list', Commerce::class);
+        }
+
+        else {
+            yield MenuItem::section('Gestion des données');
+            yield MenuItem::linkToCrud('Restaurants', 'fas fa-list', Restaurant::class);
+            yield MenuItem::linkToCrud('Activités', 'fas fa-list', Activite::class);
+            yield MenuItem::linkToCrud('Commerce', 'fas fa-list', Commerce::class);
+        }
     }
 }
