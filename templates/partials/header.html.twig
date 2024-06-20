@@ -2,37 +2,40 @@
 
 {% block body %}
 
-	<nav class="navbar navbar-expand-lg">
+    <header class="navbar navbar-expand-lg">
 
-		<div class="container-fluid justify-content-center">
+        <div class="container-fluid">
 
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_home') }}>Accueil</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_prestation') }}>Nos prestations</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_restaurer') }}>Se restaurer</a>
-				</li>
-			</ul>
+            <img class="AccorLogo mx-5" src="assets/img/700px-Accor_Logo.png" alt="AccorLogo">
 
-			<img class="AccorLogo mx-5" src="assets/img/700px-Accor_Logo.png" alt="AccorLogo">
+            <div class="collapse navbar-collapse justify-content-center">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_home') }}>Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_prestation') }}>Nos prestations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_restaurer') }}>Se restaurer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_activite') }}>Les activités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_commerce') }}>Les commerces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_contact') }}>Contact</a>
+                    </li>
+                </ul>
+            </div>
 
-			<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_activite') }}>Les activités</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_commerce') }}>Les commerces</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href={{ path('app_contact') }}>Contact</a>
-				</li>
-			</ul>
+            <div class="ms-auto">
+                <a class="btn btn-primary" href={{ path('app_login') }}>Se connecter</a>
+            </div>
 
-		</div>
-	</nav>
+        </div>
+    </header>
 
 {% endblock %}

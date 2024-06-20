@@ -2,44 +2,37 @@
 
 {% block body %}
 
-	<footer class="container-fluid">
+    <footer class="container-fluid">
 
-		<div class="row">
-			<div class="col-12 col-md-4">
-				<img class="AccorLogo" src="assets/img/700px-Accor_Logo.png" alt="AccorLogo">
-			</div>
+        <div class="row align-items-center">
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+                <img class="AccorLogo mx-5" src="assets/img/700px-Accor_Logo.png" alt="AccorLogo">
+            </div>
 
-			<div class="col-12 col-md-4">
-				<ul class="redirection">
-					<li>
-						<a href={{ path('app_home') }}>Accueil</a>
-					</li>
-					<li>
-						<a href={{ path('app_prestation') }}>Nos prestations</a>
-					</li>
-					<li>
-						<a href={{ path('app_restaurer') }}>Se restaurer</a>
-					</li>
-					<li>
-						<a href={{ path('app_activite') }}>Les activités</a>
-					</li>
-					<li>
-						<a href={{ path('app_commerce') }}>Les commerces</a>
-					</li>
-					<li>
-						<a href={{ path('app_contact') }}>Contact</a>
-					</li>
-				</ul>
-			</div>
+            <div class="col-12 col-md-8 d-flex justify-content-center">
+                <ul class="navbar-nav d-flex flex-row justify-content-around w-100">
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_home') }}>Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_prestation') }}>Nos prestations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_restaurer') }}>Se restaurer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_activite') }}>Les activités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_commerce') }}>Les commerces</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href={{ path('app_contact') }}>Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
 
-			<div class="col-12 col-md-4">
-				<ul class="redirection">
-					<li>Politique de confidentialité</li>
-					<li>Mentions légales</li>
-				</ul>
-			</div>
-		</div>
-
-	</footer>
+    </footer>
 
 {% endblock %}
