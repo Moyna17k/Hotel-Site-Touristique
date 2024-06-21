@@ -11,7 +11,6 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 #[Vich\Uploadable]
 class Commerce
 {
-
     public function __construct()
     {
         $this->created_at = new \DateTimeImmutable();
@@ -45,7 +44,7 @@ class Commerce
     #[ORM\Column]
     private ?bool $is_active = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(type: 'text')]
     private ?string $description = null;
 
     #[ORM\Column(length: 255)]
