@@ -18,7 +18,7 @@
         <div class="row align-items-center mb-4">
             {% if loop.index is divisible by(2) %}
                 <div class="col-lg-7">
-                    <img class="imgacti img-fluid" src="{{ asset('images/activites/' ~ activite.image) }}" alt="imgactivite">
+                    <img class="imgacti img-fluid" src="{{ asset('images/activites/' ~ activite.image) | imagine_filter('activity_thumb') }}" alt="imgactivite">
                 </div>
                 <div class="col-lg-5">
                     <div class="text-center">
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-lg-7">
-                    <img class="imgacti img-fluid" src="{{ asset('images/activites/' ~ activite.image) }}" alt="imgactivite">
+                    <img class="imgacti img-fluid" src="{{ asset('images/activites/' ~ activite.image) | imagine_filter('activity_thumb') }}" alt="imgactivite">
                 </div>
             {% endif %}
         </div>

@@ -1,48 +1,49 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CommerceController!{% endblock %}
+{% block title %}Hello CommerceController!
+{% endblock %}
 
 {% block body %}
 
-{% include 'partials/header.html.twig' %}
+	{% include 'partials/header.html.twig' %}
 
-<!-- MAIN IMG -->
-<div class="mainimg">
-    <img src="assets/img/imgcommerce.jpg" alt="imgaccueil">
-    <p>Les commerces</p>
-</div>
+	<!-- MAIN IMG -->
+	<div class="mainimg">
+		<img src="assets/img/imgcommerce.jpg" alt="imgaccueil">
+		<p>Les commerces</p>
+	</div>
 
-<!-- COMMERCES -->
-<div class="container my-4">
-    <div class="row align-items-center mb-4">
-    {% for commerce in commerces %}
-        {% if loop.index is divisible by(2) %}
-            <div class="col-lg-7">
-                <img class="imgacti img-fluid" src="{{ asset('images/commerces/' ~ commerce.image) }}" alt="imgcommerce">
-            </div>
-            <div class="col-lg-5">
-                <div class="text-center">
-                    <h2>{{ commerce.title }}</h2>
-                    <p>{{ commerce.description }}</p>
-                    <a class="btn btn-primary" href="{{ commerce.url }}" target="_blank">Voir le lieu</a>
-                </div>
-            </div>
-        {% else %}
-            <div class="col-lg-5">
-                <div class="text-center">
-                    <h2>{{ commerce.title }}</h2>
-                    <p>{{ commerce.description }}</p>
-                    <a class="btn btn-primary" href="{{ commerce.url }}" target="_blank">Voir le lieu</a>
-                </div>
-            </div>
-            <div class="col-lg-7">
-                <img class="imgacti img-fluid" src="{{ asset('images/commerces/' ~ commerce.image) }}" alt="imgcommerce">
-            </div>
-        {% endif %}
-    {% endfor %}
-    </div>
-</div>
+	<!-- COMMERCES -->
+	<div class="container my-4">
+		{% for commerce in commerces %}
+			<div class="row align-items-center mb-4">
+				{% if loop.index is divisible by(2) %}
+					<div class="col-lg-7">
+						<img class="imgacti img-fluid" src="{{ asset('images/commerces/' ~ commerce.image) | imagine_filter('activity_thumb') }}" alt="imgcommerce">
+					</div>
+					<div class="col-lg-5">
+						<div class="text-center">
+							<h2>{{ commerce.title }}</h2>
+							<p>{{ commerce.description }}</p>
+							<a class="btn btn-primary" href="{{ commerce.url }}" target="_blank">Voir le lieu</a>
+						</div>
+					</div>
+				{% else %}
+					<div class="col-lg-5">
+						<div class="text-center">
+							<h2>{{ commerce.title }}</h2>
+							<p>{{ commerce.description }}</p>
+							<a class="btn btn-primary" href="{{ commerce.url }}" target="_blank">Voir le lieu</a>
+						</div>
+					</div>
+					<div class="col-lg-7">
+						<img class="imgacti img-fluid" src="{{ asset('images/commerces/' ~ commerce.image) | imagine_filter('activity_thumb')}}" alt="imgcommerce">
+					</div>
+				{% endif %}
+			</div>
+		{% endfor %}
+	</div>
 
-{% include 'partials/footer.html.twig' %}
+	{% include 'partials/footer.html.twig' %}
 
 {% endblock %}
