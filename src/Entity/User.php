@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
@@ -35,6 +37,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column]
     private bool $isVerified = false;
+
+    /**
+     * @var Collection<int, Restaurant>
+     */
+    #[ORM\OneToMany(targetEntity: Restaurant::class, mappedBy: 'user')]
+    private Collection $Restaurants;
+
+    /**
+     * @var Collection<int, Commerce>
+     */
+    #[ORM\OneToMany(targetEntity: Commerce::class, mappedBy: 'user')]
+    private Collection $Commerces;
+
+    /**
+     * @var Collection<int, Activite>
+     */
+    #[ORM\OneToMany(targetEntity: Activite::class, mappedBy: 'user')]
+    private Collection $Activites;
+
+    public function __construct()
+    {
+        $this->Restaurants = new ArrayCollection();
+        $this->Commerces = new ArrayCollection();
+        $this->Activites = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -118,6 +145,96 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     public function setVerified(bool $isVerified): static
     {
         $this->isVerified = $isVerified;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Restaurant>
+     */
+    public function getRestaurants(): Collection
+    {
+        return $this->Restaurants;
+    }
+
+    public function addRestaurant(Restaurant $restaurant): static
+    {
+        if (!$this->Restaurants->contains($restaurant)) {
+            $this->Restaurants->add($restaurant);
+            $restaurant->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeRestaurant(Restaurant $restaurant): static
+    {
+        if ($this->Restaurants->removeElement($restaurant)) {
+            // set the owning side to null (unless already changed)
+            if ($restaurant->getUser() === $this) {
+                $restaurant->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Commerce>
+     */
+    public function getCommerces(): Collection
+    {
+        return $this->Commerces;
+    }
+
+    public function addCommerce(Commerce $commerce): static
+    {
+        if (!$this->Commerces->contains($commerce)) {
+            $this->Commerces->add($commerce);
+            $commerce->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCommerce(Commerce $commerce): static
+    {
+        if ($this->Commerces->removeElement($commerce)) {
+            // set the owning side to null (unless already changed)
+            if ($commerce->getUser() === $this) {
+                $commerce->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Activite>
+     */
+    public function getActivites(): Collection
+    {
+        return $this->Activites;
+    }
+
+    public function addActivite(Activite $activite): static
+    {
+        if (!$this->Activites->contains($activite)) {
+            $this->Activites->add($activite);
+            $activite->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeActivite(Activite $activite): static
+    {
+        if ($this->Activites->removeElement($activite)) {
+            // set the owning side to null (unless already changed)
+            if ($activite->getUser() === $this) {
+                $activite->setUser(null);
+            }
+        }
 
         return $this;
     }
