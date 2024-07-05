@@ -47,5 +47,4 @@ class RestaurantCrudController extends AbstractCrudController
                 ->setRequired(false)->hideOnIndex(),
         ];
     }
-    
 }
