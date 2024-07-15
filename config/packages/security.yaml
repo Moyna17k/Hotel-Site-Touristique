@@ -30,6 +30,11 @@ security:
                 # login form, uncomment the following line to always enable it.
                 #always_remember_me: true
 
+            # configure the maximum login attempts
+            login_throttling:
+                max_attempts: 3  
+                interval: '60 minutes'
+
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#the-firewall
 
@@ -40,12 +45,10 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/admin, roles: ROLE_ADMIN }
-        - { path: ^/profile, roles: ROLE_USER }
+        #- { path: ^/profile, roles: ROLE_USER }
 
     role_hierarchy:
         ROLE_SUPER_ADMIN: [ROLE_ADMIN]
-        ROLE_ADMIN: [ROLE_ADMIN]
-        ROLE_USER: [ROLE_USER]
 
 when@test:
     security:
